@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import './CreateQuestion.scss';
+import { Link } from "react-router-dom";
 
 const CreateQuestion = () => {
   const [form, setForm] = useState({
@@ -34,23 +36,32 @@ const CreateQuestion = () => {
     setForm({ question: "", answer: "" });
   }
 
-  // create a form which asks for a question, and an answer
+//  Check if user is logged in
   return (
-    <form onSubmit={onSubmit}>
-      <label>Question</label>
-      <input
-        type="text"
-        value={form.question}
-        onChange={(e) => updateForm({ question: e.target.value })}
-      ></input>
-      <label>Answer</label>
-      <input
-        type="text"
-        value={form.answer}
-        onChange={(e) => updateForm({ answer: e.target.value })}
-      ></input>
-      <input type="submit" value="Create question"></input>
-    </form>
+    <div className="form-container">
+      <form className="form-layout" onSubmit={onSubmit}>
+        <div className="form-group">
+          <label>Question</label>
+          <textarea
+            required
+            type="text"
+            value={form.question}
+            onChange={(e) => updateForm({ question: e.target.value })}
+          ></textarea>
+        </div>
+        <div className="form-group">
+          <label>Answer</label>
+          <textarea
+            required
+            type="text"
+            value={form.answer}
+            onChange={(e) => updateForm({ answer: e.target.value })}
+          ></textarea>
+        </div>
+        <input type="submit" value="Submit question"></input>
+      </form>
+      <Link to="/"><button className="link-button middle">Return to main page</button></Link>
+    </div>
   );
 };
 
