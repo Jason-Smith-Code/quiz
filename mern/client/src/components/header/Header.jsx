@@ -1,14 +1,12 @@
 import './Header.scss';
+import Logo from '../logo/Logo';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header>
-            {/* Logo */}
-            <div>Logo</div>
-            {/* Login */}
-            <div>Login</div>
-            {/* Menu */}
-            <div>Menu</div>
+            <Logo />   
+            <Link to="/login"><button>Login</button></Link>
         </header>
     )
 }
