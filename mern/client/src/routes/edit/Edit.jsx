@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { useParams, useNavigate } from "react-router";
 
-import './EditQuestion';
+import './Edit';
 
-const EditQuestion = () => {
+const Edit = () => {
   const [form, setForm] = useState({
     question: "",
     answer: "",
@@ -67,28 +67,28 @@ const EditQuestion = () => {
   }
 
   return (
-    <div>
+    <div className="form-container">
       <h3>Update Record</h3>
-      <form onSubmit={onSubmit}>
+      <form className="form-layout" onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="question">question: </label>
-          <input
+          <label htmlFor="question">Question</label>
+          <textarea
+            required
             type="text"
-            className="form-control"
             id="question"
             value={form.question}
             onChange={(e) => updateForm({ question: e.target.value })}
-          />
+          ></textarea>
         </div>
         <div className="form-group">
-          <label htmlFor="answer">answer: </label>
-          <input
-            type="text"
-            className="form-control"
+          <label htmlFor="answer">Answer:</label>
+          <textarea
+            required
             id="answer"
+            type="text"
             value={form.answer}
             onChange={(e) => updateForm({ answer: e.target.value })}
-          />
+          ></textarea>
         </div>
         <br />
   
@@ -104,4 +104,4 @@ const EditQuestion = () => {
   );
  }
 
-export default EditQuestion;
+export default Edit;

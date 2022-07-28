@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import './CreateQuestion.scss';
+import './Create.scss';
 import { Link } from "react-router-dom";
 
-const CreateQuestion = () => {
+const Create = () => {
   const [form, setForm] = useState({
     question: "",
     answer: "",
@@ -41,7 +41,7 @@ const CreateQuestion = () => {
     <div className="form-container">
       <form className="form-layout" onSubmit={onSubmit}>
         <div className="form-group">
-          <label>Question</label>
+          <label htmlFor="question">Question</label>
           <textarea
             required
             type="text"
@@ -50,7 +50,7 @@ const CreateQuestion = () => {
           ></textarea>
         </div>
         <div className="form-group">
-          <label>Answer</label>
+          <label htmlFor="answer">Answer:</label>
           <textarea
             required
             type="text"
@@ -65,4 +65,4 @@ const CreateQuestion = () => {
   );
 };
 
-export default CreateQuestion;
+export default Create;

@@ -1,0 +1,6 @@
+currently passwords are shown in the database, they need to be masked.
+
+I need to apply athentication for user login.
+
+Once I have done above, I need to attach the user_ID to each submission to thedatabase.
+Each user will only be able to see data they have submitted.

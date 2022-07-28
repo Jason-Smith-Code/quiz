@@ -6,7 +6,10 @@ const Header = () => {
     return (
         <header>
             <Logo />   
-            <Link to="/login"><button>Login</button></Link>
+            <div>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+            </div>
         </header>
     )
 }
